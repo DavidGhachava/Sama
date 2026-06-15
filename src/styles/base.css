@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 82% 8%, rgba(183, 83, 45, 0.28), transparent 30rem),
+    linear-gradient(180deg, #070606 0%, #0f0b09 48%, #080706 100%);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button,
+a {
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.app-shell {
+  overflow-x: hidden;
+}
+
+.section-shell {
+  width: min(1180px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 72px 0;
+}
+
+.section-intro {
+  max-width: 620px;
+}
+
+.section-intro--center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-intro span,
+.menu-hero span {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--ember);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.section-intro h2,
+.menu-hero h1,
+.menu-cta h2 {
+  margin: 0;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.9rem, 3.9vw, 3.45rem);
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+.section-intro p,
+.menu-hero p,
+.menu-cta p {
+  margin: 18px 0 0;
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 760px) {
+  .section-shell {
+    width: min(100% - 28px, 1180px);
+    padding: 56px 0;
+  }
+}
