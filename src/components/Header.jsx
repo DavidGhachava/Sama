@@ -146,12 +146,22 @@ export default function Header({ config, language, setLanguage, page, setPage, o
               {config.nav.map((link) => (
                 <button key={link.target} onClick={() => goTo(link.target)}>{link.label}</button>
               ))}
-              <div className="mobile-language-row">
-                {languageOptions.map((option) => (
-                  <button key={option.code} className={language === option.code ? "active" : ""} type="button" onClick={() => setLanguage(option.code)}>
-                    {option.short}
-                  </button>
-                ))}
+              <div className="mobile-language-panel">
+                <button className="mobile-language-trigger" type="button" onClick={() => setLanguageOpen((value) => !value)}>
+                  <span>{languageOptions.find((option) => option.code === language)?.short || "EN"}</span>
+                  <small>{config.language.title}</small>
+                </button>
+                <AnimatePresence>
+                  {languageOpen && (
+                    <motion.div className="mobile-language-options" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 36 }} exit={{ opacity: 0, height: 0 }}>
+                      {languageOptions.map((option) => (
+                        <button key={option.code} className={language === option.code ? "active" : ""} type="button" onClick={() => setLanguage(option.code)}>
+                          {option.short}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
               <button className="primary-action" onClick={() => { setOpen(false); onReserve(); }}>{config.hero.reserve}</button>
             </motion.nav>

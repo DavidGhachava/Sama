@@ -172,7 +172,7 @@
 }
 
 .language-menu button,
-.mobile-language-row button {
+.mobile-language-options button {
   min-height: 38px;
   border: 0;
   border-radius: 999px;
@@ -183,7 +183,7 @@
 
 .language-menu button:hover,
 .language-menu button.active,
-.mobile-language-row button.active {
+.mobile-language-options button.active {
   color: #130d09;
   background: var(--gold);
 }
@@ -239,11 +239,11 @@
 
 .menu-toggle {
   display: none;
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border: 1px solid var(--line);
   border-radius: 50%;
-  background: transparent;
+  background: rgba(248, 240, 223, 0.035);
 }
 
 .menu-toggle span {
@@ -270,8 +270,8 @@
   right: 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px 12px;
-  padding: 18px;
+  gap: 8px;
+  padding: 12px 14px 14px;
   border-top: 1px solid rgba(240, 177, 91, 0.2);
   border-bottom: 1px solid rgba(240, 177, 91, 0.24);
   background:
@@ -281,12 +281,13 @@
 }
 
 .mobile-nav button {
-  min-height: 48px;
-  border: 1px solid rgba(240, 177, 91, 0.28);
-  border-radius: 16px;
+  min-height: 40px;
+  border: 1px solid rgba(240, 177, 91, 0.22);
+  border-radius: 14px;
   color: var(--cream);
-  background: rgba(255, 247, 223, 0.055);
+  background: rgba(255, 247, 223, 0.04);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
   text-align: center;
 }
 
@@ -299,18 +300,61 @@
 
 .mobile-nav .primary-action {
   grid-column: 1 / -1;
-  min-height: 50px;
+  min-height: 44px;
   margin-top: 2px;
   color: #130d09;
   border-color: transparent;
   background: var(--gold);
 }
 
-.mobile-language-row {
+.mobile-language-panel {
   grid-column: 1 / -1;
+  display: grid;
+  gap: 8px;
+}
+
+.mobile-language-trigger {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 0 12px;
+  text-align: left;
+}
+
+.mobile-language-trigger span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 28px;
+  border-radius: 999px;
+  color: #130d09;
+  background: var(--gold);
+  font-weight: 950;
+}
+
+.mobile-language-trigger small {
+  min-width: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mobile-language-options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 8px;
+  overflow: hidden;
+}
+
+.mobile-language-options button {
+  min-height: 36px;
+  border-radius: 999px;
 }
 
 .language-modal-backdrop {
