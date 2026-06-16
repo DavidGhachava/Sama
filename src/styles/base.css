@@ -45,6 +45,8 @@ img {
   width: min(1180px, calc(100% - 56px));
   margin: 0 auto;
   padding: 72px 0;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 720px;
 }
 
 .section-intro {

@@ -5,7 +5,7 @@ export default function Hero({ config, setPage, onReserve }) {
   return (
     <section className="sama-hero" id="home">
       <div className="hero-media">
-        <img src={config.brand.heroImage} alt={config.hero.imageAlt} />
+        <img src={config.brand.heroImage} alt={config.hero.imageAlt} width="1672" height="941" fetchPriority="high" decoding="async" />
       </div>
       <motion.div className="hero-copy-block" variants={stagger} initial="hidden" animate="show">
         <motion.span variants={fadeUp}>{config.hero.eyebrow}</motion.span>

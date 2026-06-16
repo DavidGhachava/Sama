@@ -12,12 +12,12 @@ export default function MenuPreview({ config, setPage }) {
         align="center"
       />
       <motion.div className="preview-columns" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
-        {config.menuCategories.map((category) => (
-          <motion.article className="preview-category" variants={fadeUp} key={category.name}>
+        {config.menuCategories.map((category, categoryIndex) => (
+          <motion.article className="preview-category" variants={fadeUp} key={categoryIndex}>
             <h3>{category.name}</h3>
-            {category.items.slice(0, 2).map((item) => (
-              <div className="preview-item" key={item.name}>
-                <img src={item.image} alt="" />
+            {category.items.slice(0, 2).map((item, itemIndex) => (
+              <div className="preview-item" key={`${categoryIndex}-${item.image}-${itemIndex}`}>
+                <img src={item.image} alt="" width="418" height="314" loading="lazy" decoding="async" />
                 <span>{item.name}</span>
                 <strong>{item.price}</strong>
               </div>

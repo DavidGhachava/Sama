@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { samaConfigs } from "./data/samaConfig";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -15,11 +15,16 @@ import LanguageModal from "./components/LanguageModal";
 export default function App() {
   const [page, setPage] = useState("home");
   const [language, setLanguage] = useState(() => localStorage.getItem("sama-language") || "");
-  const activeLanguage = language || "en";
+  const activeLanguage = samaConfigs[language] ? language : "en";
   const samaConfig = useMemo(() => samaConfigs[activeLanguage], [activeLanguage]);
   const showLanguageModal = !language;
 
+  useEffect(() => {
+    document.documentElement.lang = activeLanguage === "ge" ? "ka" : activeLanguage;
+  }, [activeLanguage]);
+
   const chooseLanguage = (code) => {
+    if (!samaConfigs[code]) return;
     localStorage.setItem("sama-language", code);
     setLanguage(code);
   };

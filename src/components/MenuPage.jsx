@@ -12,14 +12,14 @@ export default function MenuPage({ config, setPage, onReserve }) {
       </section>
 
       <motion.section className="full-menu-grid" variants={stagger} initial="hidden" animate="show">
-        {config.menuCategories.map((category) => (
-          <motion.div className="menu-category-block" variants={fadeUp} key={category.name}>
+        {config.menuCategories.map((category, categoryIndex) => (
+          <motion.div className="menu-category-block" variants={fadeUp} key={categoryIndex}>
             <h2>{category.name}</h2>
             <div className="menu-card-list">
-              {category.items.map((item) => (
-                <article className="full-menu-item" key={item.name}>
+              {category.items.map((item, itemIndex) => (
+                <article className="full-menu-item" key={`${categoryIndex}-${item.image}-${itemIndex}`}>
                   <div className="menu-thumb">
-                    <img src={item.image} alt={item.name} />
+                    <img src={item.image} alt={item.name} width="418" height="314" loading="lazy" decoding="async" />
                   </div>
                   <div>
                     <div className="card-row">

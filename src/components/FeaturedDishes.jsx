@@ -12,9 +12,9 @@ export default function FeaturedDishes({ config }) {
       />
       <motion.div className="dish-grid" variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}>
         {config.featured.map((dish) => (
-          <motion.article className="premium-card" variants={fadeUp} key={dish.name}>
+          <motion.article className="premium-card" variants={fadeUp} key={dish.image}>
             <div className="premium-image">
-              <motion.img src={dish.image} alt={dish.name} variants={imageLift} initial="rest" whileHover="hover" />
+              <motion.img src={dish.image} alt={dish.name} width="418" height="314" loading="lazy" decoding="async" variants={imageLift} initial="rest" whileHover="hover" />
               <span>{dish.tag}</span>
             </div>
             <div>

@@ -1,5 +1,5 @@
 const images = {
-  hero: "/images/sama/hero-luxury-v2.png",
+  hero: "/images/sama/hero-luxury-optimized.jpg",
   veggie: "/images/sama/veggie-lunch.jpg",
   recovery: "/images/sama/recovery-ramen.jpg",
   sushi: "/images/sama/sushi-rolls.jpg",

@@ -16,7 +16,7 @@ export default function ReservePage({ config, setPage }) {
     <main className="reserve-page">
       <section className="reserve-hero">
         <div className="reserve-hero-media">
-          <img src="/images/sama/hero-luxury-v2.png" alt={config.reservePage.imageAlt} />
+          <img src="/images/sama/hero-luxury-optimized.jpg" alt={config.reservePage.imageAlt} width="1672" height="941" loading="lazy" decoding="async" />
         </div>
         <motion.div className="reserve-hero-copy" variants={stagger} initial="hidden" animate="show">
           <motion.button className="back-link" variants={fadeUp} onClick={() => setPage("home")}>{config.reservePage.back}</motion.button>
@@ -92,6 +92,8 @@ export default function ReservePage({ config, setPage }) {
             title={config.reservePage.mapTitle}
             src="https://www.google.com/maps?q=41.6521875,41.6334375&z=17&output=embed"
             loading="lazy"
+            width="600"
+            height="260"
             referrerPolicy="no-referrer-when-downgrade"
           />
         </aside>

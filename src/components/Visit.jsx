@@ -19,6 +19,8 @@ export default function Visit({ config, onReserve }) {
             title={`${config.visit.maps} ${config.brand.location}`}
             src="https://www.google.com/maps?q=41.6521875,41.6334375&z=17&output=embed"
             loading="lazy"
+            width="600"
+            height="300"
             referrerPolicy="no-referrer-when-downgrade"
           />
           <div>
